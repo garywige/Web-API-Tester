@@ -13,3 +13,4 @@ C:\Projects\Web API Tester\Web API Tester\obj\Debug\net5.0\Web API Tester.dll
 C:\Projects\Web API Tester\Web API Tester\obj\Debug\net5.0\ref\Web API Tester.dll
 C:\Projects\Web API Tester\Web API Tester\obj\Debug\net5.0\Web API Tester.pdb
 C:\Projects\Web API Tester\Web API Tester\obj\Debug\net5.0\Web API Tester.genruntimeconfig.cache
+C:\Projects\Web API Tester\Web API Tester\obj\Debug\net5.0\Web API Tester.csproj.AssemblyReference.cache

@@ -15,6 +15,12 @@ namespace Web_API_Tester
             _client = new();
         }
 
+        ~Controller()
+        {
+            _client.Dispose();
+            if (Response != null) Response.Dispose();
+        }
+
         // public interface
         public static Controller Instance
         {
@@ -35,7 +41,7 @@ namespace Web_API_Tester
             Patch
         }
 
-        public async void RunLoop()
+        public async Task RunLoop()
         {
             // enter loop
             do
@@ -44,7 +50,7 @@ namespace Web_API_Tester
                 URL = PromptUrl();
 
                 // prompt user what HTTP method to use
-                Method = PromptMethod();                
+                Method = PromptMethod();
 
                 // prompt user for parameters for method
                 //Parameter = PromptParameter();
@@ -53,7 +59,7 @@ namespace Web_API_Tester
                 await SendRequest();
 
                 // output response
-                if(String.IsNullOrEmpty(Response))
+                if(Response != null)
                     Console.WriteLine(Response);
 
             } while (PromptContinue()); // prompt user to continue
@@ -63,29 +69,18 @@ namespace Web_API_Tester
         private HttpMethod Method { get; set; }
         private string URL { get; set; }
         private string Parameter { get; set; }
-        private string Response { get; set; }
+        private HttpResponseMessage Response { get; set; }
 
         private async Task SendRequest()
         {
             try
             {
                 // behavior depends on method
-                switch (Method)
+                Response = Method switch 
                 {
-                    case HttpMethod.Get:
-                        Response = await _client.GetStringAsync(new Uri(URL));
-                        break;
-                    case HttpMethod.Post:
-                        throw new NotImplementedException();
-                    case HttpMethod.Put:
-                        throw new NotImplementedException();
-                    case HttpMethod.Delete:
-                        throw new NotImplementedException();
-                    case HttpMethod.Patch:
-                        throw new NotImplementedException();
-                    default:
-                        throw new NotImplementedException();
-                }
+                    HttpMethod.Get => await _client.GetAsync(URL),
+                    _ => throw new NotImplementedException()
+                };
             }
             catch(HttpRequestException ex)
             {

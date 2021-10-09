@@ -7,7 +7,7 @@ namespace Web_API_Tester
         static void Main()
         {
             // enter program loop
-            Controller.Instance.RunLoop();
+            Controller.Instance.RunLoop().Wait();
         }
     }
 }
