@@ -38,7 +38,8 @@ namespace Web_API_Tester
             Post,
             Put,
             Delete,
-            Patch
+            Patch,
+            None
         }
 
         public async Task RunLoop()
@@ -53,7 +54,7 @@ namespace Web_API_Tester
                 Method = PromptMethod();
 
                 // prompt user for parameters for method
-                //Parameter = PromptParameter();
+                Parameter = PromptParameter();
 
                 // send request
                 await SendRequest();
@@ -79,6 +80,7 @@ namespace Web_API_Tester
                 Response = Method switch 
                 {
                     HttpMethod.Get => await _client.GetAsync(URL),
+                    HttpMethod.Post => await _client.PostAsync(URL, new StringContent(Parameter)),
                     _ => throw new NotImplementedException()
                 };
             }
@@ -114,7 +116,7 @@ namespace Web_API_Tester
             }
         }
 
-        private HttpMethod PromptMethod()
+        private static HttpMethod PromptMethod()
         {
             bool isSuccessful = false;
             HttpMethod method = HttpMethod.Get;
@@ -123,15 +125,17 @@ namespace Web_API_Tester
                 Console.Write("Which HTTP method to you wish to test? ");
                 string input = Console.ReadLine();
 
-                switch(input.ToLower())
+                method = input.ToLower() switch
                 {
-                    case "get":
-                        method = HttpMethod.Get;
-                        isSuccessful = true;
-                        break;
-                    default:
-                        continue;
-                }                
+                    "get" => HttpMethod.Get,
+                    "post" => HttpMethod.Post,
+                    _ => HttpMethod.None
+                };
+
+                if (method == HttpMethod.None) continue;
+
+                // prompt successful
+                isSuccessful = true;
             }
 
             return method;
