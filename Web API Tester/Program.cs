@@ -4,9 +4,10 @@ namespace Web_API_Tester
 {
     class Program
     {
-        static void Main(string[] args)
+        static void Main()
         {
-            Console.WriteLine("Hello World!");
+            // enter program loop
+            Controller.Instance.RunLoop();
         }
     }
 }

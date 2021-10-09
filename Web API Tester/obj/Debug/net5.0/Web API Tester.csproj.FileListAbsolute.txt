@@ -1,0 +1,15 @@
+C:\Projects\Web API Tester\Web API Tester\bin\Debug\net5.0\Web API Tester.exe
+C:\Projects\Web API Tester\Web API Tester\bin\Debug\net5.0\Web API Tester.deps.json
+C:\Projects\Web API Tester\Web API Tester\bin\Debug\net5.0\Web API Tester.runtimeconfig.json
+C:\Projects\Web API Tester\Web API Tester\bin\Debug\net5.0\Web API Tester.runtimeconfig.dev.json
+C:\Projects\Web API Tester\Web API Tester\bin\Debug\net5.0\Web API Tester.dll
+C:\Projects\Web API Tester\Web API Tester\bin\Debug\net5.0\ref\Web API Tester.dll
+C:\Projects\Web API Tester\Web API Tester\bin\Debug\net5.0\Web API Tester.pdb
+C:\Projects\Web API Tester\Web API Tester\obj\Debug\net5.0\Web API Tester.GeneratedMSBuildEditorConfig.editorconfig
+C:\Projects\Web API Tester\Web API Tester\obj\Debug\net5.0\Web API Tester.AssemblyInfoInputs.cache
+C:\Projects\Web API Tester\Web API Tester\obj\Debug\net5.0\Web API Tester.AssemblyInfo.cs
+C:\Projects\Web API Tester\Web API Tester\obj\Debug\net5.0\Web API Tester.csproj.CoreCompileInputs.cache
+C:\Projects\Web API Tester\Web API Tester\obj\Debug\net5.0\Web API Tester.dll
+C:\Projects\Web API Tester\Web API Tester\obj\Debug\net5.0\ref\Web API Tester.dll
+C:\Projects\Web API Tester\Web API Tester\obj\Debug\net5.0\Web API Tester.pdb
+C:\Projects\Web API Tester\Web API Tester\obj\Debug\net5.0\Web API Tester.genruntimeconfig.cache
